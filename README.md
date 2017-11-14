@@ -50,13 +50,19 @@ digits中的网络结构和原生caffe稍有不同,参考[train_val.prototxt](./
 
 ##### 训练完成后进行预测
 * 预测单张图片
-digits 支持直接上传单张图片进行预测,效果如下(0代表猫,1代表狗):     
-![](pic/1.png)
+  digits 支持直接上传单张图片进行预测,效果如下(0代表猫,1代表狗):     
+  ![](pic/1.png)
 
 * 预测所有测试集
-digits也支持,但是不能导出,参考[boring.py](./boring.py)的代码. 
-但是测试集又没有Label,所以我直接submit到Kaggle上,结果如下:
+  digits也支持, 但是不能导出, 参考[boring.py](./boring.py)的代码. 
+  但是测试集又没有Label, 所以我直接submit到Kaggle上, 结果如下:
 
-score是logloss,由于logloss的公式是这样的:
+  ![3](pic/3.png)
 
-当接近于0的时候loss会非常大,所以我玩一个小手段,预测1替代成0.995,0替代成0.005,效果会好很多.
+score是logloss, 由于logloss的公式是这样的:
+
+$$logloss = -\frac{1}{N}\sum_{i=1}^{N}\sum_{j=1}^{M}y_{i,j}log(p_{i,j})$$
+
+当接近于0的时候loss会非常大, 所以我玩一个小手段, 预测1替代成0.995, 0替代成0.005,效果会好很多:
+
+![](pic/4.png)
