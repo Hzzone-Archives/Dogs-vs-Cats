@@ -1,6 +1,6 @@
 #### Dogs VS Cats.
 
-非常无聊的一个猫狗分类，为了应付Machine Learning这门课...
+GitHub地址：https://github.com/Hzzone/Dogs-vs-Cats
 
 做Deep Learning, 首先接触第一个项目必是mnist手写体数据集，再然后的可以是很多，但是猫狗分类肯定是最有名的。 
 Dogs VS Cats.最初开始于Kaggle上的一个竞赛，数据集下载[dogs-vs-cats/data](https://www.kaggle.com/c/dogs-vs-cats/data).
@@ -55,13 +55,8 @@ digits中的网络结构和原生caffe稍有不同,参考[train_val.prototxt](./
 
 * 预测所有测试集
   digits也支持, 但是不能导出, 参考[boring.py](./boring.py)的代码. 
-  但是测试集又没有Label, 所以我直接submit到Kaggle上, 结果如下:
-
-  ![3](pic/3.png)
 
 score是logloss, 由于logloss的公式是这样的:
-
 ![](pic/5.gif)
-当接近于0的时候loss会非常大, 所以我玩一个小手段, 预测1替代成0.995, 0替代成0.005,效果会好很多:
-
-![](pic/4.png)
+我直接submit到Kaggle上, 并且提交的label是狗的概率。 结果如下:
+![](pic/3.png)
