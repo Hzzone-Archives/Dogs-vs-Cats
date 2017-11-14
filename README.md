@@ -1,11 +1,11 @@
 #### Dogs VS Cats.
 
-非常无聊的一个猫狗分类，为了应付Machine Learning这么课...
+非常无聊的一个猫狗分类，为了应付Machine Learning这门课...
 
-做Deep Learning, 首先接触第一个项目必是mnist手写体数据集，再然后的可以使很多，但是猫狗分类肯定是最有名的。 
+做Deep Learning, 首先接触第一个项目必是mnist手写体数据集，再然后的可以是很多，但是猫狗分类肯定是最有名的。 
 Dogs VS Cats.最初开始于Kaggle上的一个竞赛，数据集下载[dogs-vs-cats/data](https://www.kaggle.com/c/dogs-vs-cats/data).
 ##### 目标
-在AlexNet上FineTuning猫狗分类。
+在AlexNet上Finetuning猫狗分类。
 ##### 数据集预览
 数据集一共有25000张训练集，12500张测试集，每张的大小不定。在这里数据预处理，我就简单的resize到统一的尺寸，227*227,Caffe训练好的AlexNet model接受的大小。
 ```python
@@ -43,9 +43,9 @@ def move(source):
 if __name__ == "__main__":
     move("/Users/HZzone/Downloads/train")
 ```
-分类好之后，由于Kaggle上没有开放过测试集的标签，需要将预测结果保存到csv文件提交到另一个kernel版本上[提交链接](https://www.kaggle.com/c/dogs-vs-cats-redux-kernels-edition/submit). 
+分类好之后，由于Kaggle上没有开放过测试集的标签，需要将预测结果保存到csv文件提交到另一个kernel版本上, [提交链接](https://www.kaggle.com/c/dogs-vs-cats-redux-kernels-edition/submit). 
 ##### 训练
-环境：Ubuntu 16.04/caffe/digits/1080Ti
+环境：Ubuntu 16.04/caffe/digits/1080Ti     
 下载好[model](https://github.com/BVLC/caffe/tree/master/models/bvlc_alexnet)之后，修改最后一层分类器为my-fc8, 其他的都很简单。
 
 ##### 训练完成后进行预测
